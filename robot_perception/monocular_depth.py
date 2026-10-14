@@ -52,7 +52,6 @@ inputs = {
 with torch.no_grad():
     outputs = model(**inputs)
 
-# Resize depth map về kích thước ảnh gốc
 predicted_depth = F.interpolate(
     outputs.predicted_depth.unsqueeze(1),
     size=(original_height, original_width),
